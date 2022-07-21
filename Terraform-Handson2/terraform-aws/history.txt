@@ -1,0 +1,129 @@
+    1  sudo yum update -y
+    2  wget https://releases.hashicorp.com/terraform/1.2.5/terraform_1.2.5_linux_amd64.zip
+    3  unzip terraform_1.2.5_linux_amd64.zip 
+    4  ls al
+    5  ls
+    6  rm -rf terraform_1.2.5_linux_amd64.zip 
+    7  ls
+    8  sudo mv terraform /bin
+    9  terraform
+   10  terraform --version
+   11  ls
+   12  cd Terraform/
+   13  ls
+   14  ls
+   15  terraform -version
+   16  mkdir terraform-aws && cd terraform-aws && touch main.tf
+   17  terraform init
+   18  terraform plan
+   19  terraform apply
+   20  terraform state list
+   21  terraform plan -out
+   22  terraform plan
+   23  terraform apply
+   24  terraform state
+   25  terraform state list
+   26  history > history.txt
+   27  terraform plan
+   28  terraform apply
+   29  terraform plan
+   30  terraform apply -auto-approve
+   31  terraform plan
+   32  terraform validate
+   33  terraform destroy
+   34  terraform plan
+   35  terraform init
+   36  terraform plan
+   37  you must instead obtain this
+   38  terraform plan
+   39  terraform apply
+   40  terraform graph
+   41  terraform validate
+   42  terraform plan
+   43  terraform init
+   44  terraform plan
+   45  terraform init -upgrade
+   46  terraform plan
+   47  terraform apply
+   48  terraform state list
+   49  terraform graph
+   50  terraform plan
+   51  terraform apply --auto-approve
+   52  terraform state list
+   53  terraform destroy -target=aws_s3_bucket.tf-s3
+   54  terraform plan
+   55  terraform -out myfile
+   56  terraform plan -out myfile
+   57  terraform plan
+   58  terraform apply -auto-approve
+   59  terraform state list
+   60  terraform destroy
+   61  terraform state list
+   62  terraform -version
+   63  mkdir terraform-aws && cd terraform-aws && touch main.tf
+   64  terraform -version
+   65  terraform init
+   66  terraform plan
+   67   terraform apply
+   68  terraform validate
+   69   terraform validate
+   70  terraform fmt
+   71  terraform validate
+   72  echo "hello devops" > cloud
+   73  terraform console
+   74  terraform show
+   75  terraform graph
+   76  sudo yum install graphviz
+   77  terraform graph | dot -Tsvg > graph.svg
+   78  ls
+   79  cat graph.svg
+   80  terraform graph
+   81  terraform plan
+   82  terraform apply
+   83  terrform output
+   84  terraform output
+   85  terraform output -json
+   86  terraform state list
+   87  terraform apply -refresh-only
+   88  terraform state list
+   89  terraform plan
+   90  terraform apply
+   91  echo terraform.tfstate.backup > new.tf
+   92  terraform plan
+   93  backup=echo terraform.tfstate.backup > new.tf
+   94  echo terraform.tfstate.backup > new.tf=backup
+   95  terraform apply
+   96  terraform destroy target=aws_s3_bucket.tf-s3
+   97  terraform state list
+   98  terraform apply -refresh-only
+   99  terraform state
+  100  terraform state list
+  101  echo terraform.tfstate.backup > new.tf=backup
+  102  terraform apply
+  103  terraform state list
+  104  terraform apply -refresh=false
+  105  terraform apply
+  106  terraform init
+  107  terraform plan
+  108  terraform init -upgrade
+  109  terraform apply
+  110  terraform state list
+  111  terraform validate
+  112  terraform apply
+  113  terraform plan
+  114  terraform plan -var="s3_bucket_name=oliver-new-s3-bucket-2"
+  115  terraform plan
+  116  terraform plan -var="s3_bucket_name=oliver-new-s3-bucket-2"
+  117  terraform apply
+  118  terraform plan -var="s3_bucket_name=oliver-new-s3-bucket-2"
+  119  terraform plan
+  120  terraform plan --var-file="oliver.tfvars"
+  121  terraform plan --var-file="betul.tfvars"
+  122  terraform plan
+  123  terraform init -upgrade
+  124  terraform plan
+  125  terraform apply
+  126  terraform state list
+  127  terraform plan
+  128  terraform apply
+  129  history > history.txt
