@@ -1,0 +1,26 @@
+    1  sudo yum update -y
+    2  wget https://releases.hashicorp.com/terraform/1.2.5/terraform_1.2.5_linux_amd64.zip
+    3  unzip terraform_1.2.5_linux_amd64.zip 
+    4  ls al
+    5  ls
+    6  rm -rf terraform_1.2.5_linux_amd64.zip 
+    7  ls
+    8  sudo mv terraform /bin
+    9  terraform
+   10  terraform --version
+   11  ls
+   12  cd Terraform/
+   13  ls
+   14  ls
+   15  terraform -version
+   16  mkdir terraform-aws && cd terraform-aws && touch main.tf
+   17  terraform init
+   18  terraform plan
+   19  terraform apply
+   20  terraform state list
+   21  terraform plan -out
+   22  terraform plan
+   23  terraform apply
+   24  terraform state
+   25  terraform state list
+   26  history > history.txt
