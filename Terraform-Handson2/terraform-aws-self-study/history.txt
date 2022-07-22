@@ -1,0 +1,42 @@
+    1  ls
+    2  terraform init
+    3  terraform plan
+    4  terraform apply
+    5  echo "hello devops" > cloud
+    6  terraform console
+    7  terraform apply
+    8  terraform output
+    9  terraform output tf_example_s3_meta
+   10  terraform output tf_example_public_ip
+   11  terraform state list
+   12  terraform apply
+   13  terraform state list
+   14  terraform apply -refresh-only
+   15  terraform apply -auto-approve
+   16  terraform apply -refresh=false
+   17  terraform plan
+   18  terraform apply -auto-approve
+   19  terraform validate
+   20  terraform apply -auto-approve
+   21  terraform plan
+   22  terraform plan -var="s3_bucket_name=oliver-new-s3-bucket-2"
+   23  export TF_VAR_s3_bucket_name=oliver-env-varible-bucket
+   24  terraform plan
+   25  terraform plan --var-file="benimozel.tfvars
+   26  terraform plan --var-file="benimozel.tfvars"
+   27  terraform plan --var-file="betul.tfvars"
+   28  terraform plan
+   29  terraform apply
+   30  terraform plan
+   31  terraform apply
+   32  terraform state list
+   33  history > history.txt
+   34  cd ..
+   35  history
+   36  history > history.txt
+   37  ls
+   38  rm -rf history.txt 
+   39  cd ..
+   40  cd ~
+   41  pwd
+   42  history > history.txt
