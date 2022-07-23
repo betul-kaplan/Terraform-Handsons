@@ -1,0 +1,97 @@
+provider "aws" {
+  region  = "us-east-1"
+}
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.22.0"
+    }
+  }
+    backend "s3" {
+    bucket = "tf-remote-s3-bucket-james-betul"
+    key = "env/dev/tf-remote-backend.tfstate"
+    region = "us-east-1"
+    dynamodb_table = "tf-s3-app-lock"
+    encrypt = true
+  }
+}
+
+# variable "ec2_name" {
+#   default = "oliver-ec2"
+# }
+
+# variable "ec2_type" {
+#   default = "t2.micro"
+# }
+
+# variable "ec2_ami" {
+#   default = "ami-0742b4e673072066f"
+# }
+
+locals {
+  mytag = "oliver-local-name"
+}
+
+
+data "aws_ami" "tf_ami" {
+  most_recent      = true
+  owners           = ["self"]
+
+  filter {
+    name = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+resource "aws_instance" "tf-ec2" {
+  ami           = data.aws_ami.tf_ami.id
+  instance_type = var.ec2_type
+  key_name      = "firstkey"
+  tags = {
+    Name = "${local.mytag}-this is from my-ami"
+  }
+}
+
+# variable "s3_bucket_name" {
+#   default = "bkpln-s3-bucket-variable"
+# }
+
+resource "aws_s3_bucket" "tf-s3" {
+  #bucket = "${var.s3_bucket_name}-${count.index}"
+  #count = var.num_of_buckets
+  #count = var.num_of_buckets != 0 ? var.num_of_buckets : 3
+  for_each = toset(var.users)
+  bucket   = "betul-tf-s3-bucket-${each.value}"
+}
+
+resource "aws_iam_user" "new_users" {
+  for_each = toset(var.users)
+  name = each.value
+}
+
+output "uppercase_users" {
+  value = [for user in var.users : upper(user) if length(user) > 6]
+}
+
+
+
+output "tf_example_public_ip" {
+  value = aws_instance.tf-ec2.id
+}
+
+# output "tf_example_s3_meta" {
+#   value = aws_s3_bucket.tf-s3.region
+# }
+
+output "tf_example_private_ip" {
+  value = aws_instance.tf-ec2.private_ip
+}
+output "s3-arn-1" {
+  value = aws_s3_bucket.tf-s3["fredo"].arn
+  }
+
+output "s3-arn-2" {
+      value = aws_s3_bucket.tf-s3["santino"].arn
+  } 
